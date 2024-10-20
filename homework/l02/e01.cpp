@@ -5,13 +5,8 @@ int main(void) {
 	long long n;
 	scanf("%lld", &n);
 
-	if (n >= 0) {
-		if (sqrt(n) * sqrt(n) == n) {
-			printf("YES");
-		}
-		else {
-			printf("NO");
-		}
+	if (sqrt(n) * sqrt(n) == n) {
+		printf("YES");
 	}
 	else {
 		printf("NO");
