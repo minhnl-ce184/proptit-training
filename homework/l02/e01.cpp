@@ -5,7 +5,7 @@ int main(void) {
 	long long n;
 	scanf("%lld", &n);
 
-	if (sqrt(n) * sqrt(n) == n) {
+	if (sqrt(n) * sqrt(n) == (double) n) {
 		printf("YES");
 	}
 	else {
