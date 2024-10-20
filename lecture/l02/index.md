@@ -37,7 +37,7 @@
 | ------ | -------- |
 | `!`    | negation |
 | `&&`   | and      |
-| `||`   | or       |
+| `∣∣`   | or       |
 - `!` is unary while `&&` and `||` are binary
 - `!a` produce 0 when `a` is 1, vice versa
     - have same precedence as unary `+` and `-`
@@ -45,7 +45,9 @@
 - `a && b` produce 1 when both `a` and `b` are 1. `a || b` produce 0 when both `a` and `b` are 0
     - have lower precedence than equality operators
     - left-associative
+
 **NOTE:** C treat every non-zero value as `1` in term of logical expression!
+
 **NOTE:** `&&` and `||` have short-circuit nature.
 - Consider `a && b`. if `a` is checked and produce value of 0 then the expression return the value 0 without look into `b`. Same as `a || b` when `a` produce 1.
 - Thanks to this, side-effect might not always occurs. Consider:
@@ -66,7 +68,9 @@ if (exprssion) {
     ...
 }
 ```
+
 **NOTE:** if there is only 1 statement, `{ }` can be removed!
+
 - General form of `if else`:
 ```c
 if (expression) {
@@ -76,7 +80,21 @@ else {
     ...
 }
 ```
+
 **NOTE:** `else` automatically find and match with the nearest, "else-less" `if` statement
+
+Combination `else if`
+```c
+if (expression ) {
+    statements;
+}
+else if (expression) {
+    statements;
+}
+else {
+    statements;
+}
+```
 
 ##### Conditional operator aka. Ternary operator
 ```c
@@ -116,7 +134,9 @@ switch (grade) {
 }
 ```
 - `default` run when no `const-expressions` matched the controlling expression. `default` is not mandatory
+
 **NOTE:** the last statements normally be `break`!
+
 - when a const-expression is matched, the control "fall through" the first statements of the next case label, ignoring the case label itself
 ```c
 switch (day) {
