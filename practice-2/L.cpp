@@ -2,25 +2,22 @@
 #include <stdio.h>
 
 int main(void) {
-	int test, n, x, y, limx, limy;
+	int test, n, size;
 
-	scanf("%d", &test);
+	scanf("%d", &test); 
 
-	while (test > 0) {
-		scanf("%d", &n); 
+	while (test--) {
+		scanf("%d", &n);
 
-		limx = n - 1;
-		limy = -(n - 1); 
-
-		for (x = -(n - 1); x <= limx; x++) {
-			for (y = (n - 1); y >= limy; y--) {
-				printf("%c", 'a' + abs(y));
+		size = 2 * n - 1;
+		for (int y = n - 1; y >= -(n - 1); y--) {
+			for (int x = -(n - 1); x <= (n - 1); x++) {
+				printf("%c", (abs(x) < abs(y)) ? 'a' + abs(x) : 'a' + abs(y));
 			}
-			printf("\n"); 
+			printf("\n");
 		}
-
 		printf("\n");
-		test--;
 	}
+
 	return 0; 
 }
