@@ -7,7 +7,7 @@ int main(void) {
 
     for (int y = n; y >= -n; y--) {
         for (int x = -n; x <= n; x++) {
-            printf("%lld", (long long) sqrt(x * x + y * y));
+            printf("%d", abs(x) > abs(y) ? abs(x) : abs(y));
         }
         printf("\n"); 
     }
