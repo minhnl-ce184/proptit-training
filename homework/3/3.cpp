@@ -1,16 +1,13 @@
+#include <math.h>
 #include <stdio.h>
 
 int main(void) {
-    int n, size, x, y;
+    int n, size;
     scanf("%d", &n); 
 
-    size = 2*n + 1;
-    x = -size;
-    y = size;
-
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            printf("%lld", (long long) sqrt(i * i + j * j);
+    for (int y = n; y >= -n; y--) {
+        for (int x = -n; x <= n; x++) {
+            printf("%lld", (long long) sqrt(x * x + y * y));
         }
         printf("\n"); 
     }
