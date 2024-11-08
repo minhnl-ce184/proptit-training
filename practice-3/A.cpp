@@ -1,26 +1,24 @@
 #include <stdio.h>
 
 int gcd(int a, int b) {
-	if (b != 0) {
-		b = a % b;
-		a = 
-		return gcd(a, a%b);
-	}
-	return a;
-}
-
-void co_prime_pair(int a, int b) {
+	if (b == 0) return a;
+	return gcd(b, a % b);
 }
 
 int main(void) {
-	int n, a[1000] = {0};
-
+	int n, count = 0;
 	scanf("%d", &n);
+	int a[n] = {0};
 
 	for (int i = 0; i < n; i++) {
-		scanf("%d", &a[i]);
+		scanf("%d", &a[i]); 
 	}
-	printf("%d\n", gcd(a[0], a[1]));
 
-	return 0;
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (gcd(a[i], a[j]) == 1) count++;
+		}
+	}
+	printf("%d\n", count);
+	return 0; 
 }
